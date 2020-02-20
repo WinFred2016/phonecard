@@ -1,0 +1,19 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<div class="container">
+  <div *ngFor="let info of infos">
+  <ng-container *ngTemplateOutlet="card; context: {$implicit: info}"></ng-container>
+  </div>
+</div>
+
+
+<ng-template #card let-info>
+  <div class="card-container">
+    <a class="card-container"[href]="'tel:' + info.phone">
+      <img class="icon" [src]=info.icon>
+      <label>{{info.name}}</label></a>
+  </div>
+  </ng-template>
